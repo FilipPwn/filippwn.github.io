@@ -8,7 +8,7 @@ url: "https://filippwn.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: pages-themes/hacker
 
 # Plugins
 plugins:
