@@ -8,13 +8,12 @@ url: "https://filippwn.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-remote_theme: pages-themes/minimal@v0.2.0
+theme: minima
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-remote-theme
 
 # Optional features
 # twitter_username: your-twitter-handle
