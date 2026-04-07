@@ -1,0 +1,28 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+{% assign currentYear = "" %}
+{% for post in site.posts %}
+  {% assign postYear = post.date | date: "%Y" %}
+  {% if postYear != currentYear %}
+    {% if currentYear != "" %}</div>{% endif %}
+    <div class="year-group">
+    <div class="year-heading">{{ postYear }}</div>
+    {% assign currentYear = postYear %}
+  {% endif %}
+  <div class="post-entry">
+    <div class="post-entry-left">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% for tag in post.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>{% endfor %}
+    </div>
+    <span class="post-date">{{ post.date | date: "%b %-d" }}</span>
+  </div>
+{% endfor %}
+{% if currentYear != "" %}</div>{% endif %}
+
+{% if site.posts.size == 0 %}
+<p style="color: var(--text-muted); font-style: italic;">No posts yet — stay tuned.</p>
+{% endif %}

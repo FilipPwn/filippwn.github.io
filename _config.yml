@@ -1,0 +1,38 @@
+title: "Filip Wozniak - Cybersecurity"
+description: "Security research, CTF writeups, and thoughts on offensive and defensive security."
+author: Filip Wozniak
+baseurl: ""
+url: "https://filippwn.github.io"
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    block:
+      line_numbers: false
+
+permalink: /blog/:year/:month/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - README.md
+  - CLAUDE.md
+  - .bundle/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Filip Wozniak

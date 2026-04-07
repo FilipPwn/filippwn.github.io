@@ -1,0 +1,22 @@
+---
+layout: page
+title: Tags
+permalink: /tags/
+---
+
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+<div class="tag-section" id="{{ tag[0] | slugify }}">
+  <div class="tag-section-heading"># {{ tag[0] }}</div>
+  {% for post in tag[1] %}
+  <div class="post-entry">
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
+
+{% if site.tags.size == 0 %}
+<p style="color: var(--text-muted); font-style: italic;">No tags yet.</p>
+{% endif %}

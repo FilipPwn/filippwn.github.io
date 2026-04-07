@@ -1,0 +1,10 @@
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">filip.wozniak</a>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} class="active"{% endif %}>Blog</a></li>
+      <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="active"{% endif %}>About</a></li>
+    </ul>
+  </div>
+</nav>
