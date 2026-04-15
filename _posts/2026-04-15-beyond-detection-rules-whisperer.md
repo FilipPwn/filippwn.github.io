@@ -42,6 +42,8 @@ Deployment is straightforward using a GPO scheduled task. I won't go into full G
 
 ## Elastic Stack integration
 The script sends data to a simple HTTP listener — in my case, I've used Elastic Stack integration. I've added Basic Authentication to the endpoint to ensure that only the Whisperer can send data to the endpoint.
+![Elastic Stack integration](/assets/images/whisperer/whisperer_elastic_stack_integration.png)
+
 Full configuration of integration:
 ```json
 PUT kbn:/api/fleet/package_policies/whisperer-package-policy
@@ -174,7 +176,7 @@ Of course the pipeline is not perfect and can be improved - but it is a good sta
 ## Kibana Dashboard
 
 Finally we can browse the data in Kibana:
-![Kibana Dashboard](/assets/images/kibana-dashboard.png)
+![Kibana Dashboard](/assets/images/whisperer/whisperer_sample_data.png)
 
 Every workstation in the Active Directory domain is now reporting the status of the agents.
 Additionally we can create an Elastic transform to get only the latest status of the agents for each workstation.
