@@ -6,3 +6,4 @@ vendor/
 Gemfile.lock
 CLAUDE.md
 .claude/
+serve.ps1
