@@ -42,7 +42,7 @@ Deployment is straightforward using a GPO scheduled task. I won't go into full G
 
 ## Elastic Stack integration
 The script sends data to a simple HTTP listener — in my case, I've used Elastic Stack integration. I've added Basic Authentication to the endpoint to ensure that only the Whisperer can send data to the endpoint.
-![Elastic Stack integration](/assets/images/whisperer/whisperer_elastic_stack_integration.png)
+![Elastic Stack integration](/assets/images/whisperer/http_endpoint_integration.png)
 
 Full configuration of integration:
 ```json
