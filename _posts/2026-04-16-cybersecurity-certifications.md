@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cybersecurity Certifications: My Journey and Thoughts"
-date: 2026-04-15
+date: 2026-04-16
 tags: [certification]
 description: "My journey and thoughts about cybersecurity certifications."
 ---
