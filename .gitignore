@@ -7,3 +7,4 @@ Gemfile.lock
 CLAUDE.md
 .claude/
 serve.ps1
+.jekyll-metadata
