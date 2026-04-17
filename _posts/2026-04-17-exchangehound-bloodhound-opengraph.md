@@ -201,7 +201,7 @@ RETURN p
 
 ## Conclusion
 
-Publishing ExchangeHound on GitHub is an important milestone for me. It may not be perfect, but I hope it will be useful for investigations, especially after mailbox or Exchange Server compromise. I built it in my free time using Cursor IDE and tested it in a lab running Exchange 2019. I hope it also works well across other supported Exchange versions.
+Publishing ExchangeHound on GitHub is an important milestone for me. It may not be perfect, but I hope it will be useful for investigations, especially after mailbox or Exchange Server compromise. I built it in my free time and tested it in a lab running Exchange 2019. I hope it also works well across other supported Exchange versions.
 
 I may add Exchange Online support in my spare time.
 
