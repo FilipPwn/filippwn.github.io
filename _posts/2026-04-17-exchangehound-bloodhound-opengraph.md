@@ -181,8 +181,7 @@ Use this to identify users with high-impact Exchange administrative roles.
 
 ```cypher
 MATCH p=(principal:User)-[:HasExchangeRole]->(role:ExchangeRbacRole)
-WHERE toLower(coalesce(principal.samaccountname, '')) = 'tylerscott'
-  AND toLower(coalesce(role.displayname, '')) IN [
+WHERE toLower(coalesce(role.displayname, '')) IN [
     'organization management',
     'recipient management',
     'role management',
