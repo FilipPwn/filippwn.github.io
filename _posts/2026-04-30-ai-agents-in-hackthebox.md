@@ -10,6 +10,8 @@ description: "Retrospective of running a multi-agent OpenCode setup across eight
 
 I spent a set of HackTheBox runs using an [OpenCode](https://opencode.ai) based agent setup designed less like a chatbot and more like a small offensive security team. The goal was simple: give the AI enough structure to behave like a disciplined operator, not a command generator.
 
+I picked OpenCode specifically because it supports signing in directly with an OpenAI account — no separate API key plumbing, no per-token billing setup. I ran everything on **GPT 5.5**, and honestly it performed very well across the board: solid tool use, good adherence to the operating manual, and reasonable judgement on when to back off and write to `notes/stuck.md` instead of looping.
+
 This post is a retrospective of that setup — what worked, where the agents struggled, and what I changed.
 
 This is not a benchmark. The sample is small, the boxes are heterogeneous, and several runs included human hints or corrections. But the logs are real enough to show what matters when using AI agents for CTF-style offensive security.
