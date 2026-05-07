@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enrich Your SIEM Data with Spur, Part 2 - Practical Approach"
-date: 2026-05-06
+date: 2026-05-07
 tags: [detection, siem, enrichment, elastic, spur]
 description: "How to practically enrich logs with Spur using an enrichment engine, Logstash and Elastic."
 ---
