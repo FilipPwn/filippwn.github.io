@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Enrichment flow architecture</title>
+  <desc id="desc">Identity logs reach the Enrichment Engine through Logstash. The engine caches, validates and calls Spur, then attaches the response to the Elastic document.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L8,5 L0,10 Z" fill="#0077b6"/>
+    </marker>
+    <style>
+      .h1 { font: 600 26px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .sub { font: 400 15px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .box-title { font: 600 18px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .mono { font: 500 14px 'JetBrains Mono', 'Fira Code', monospace; fill: #1c1e26; }
+      .mono-muted { font: 500 13px 'JetBrains Mono', 'Fira Code', monospace; fill: #6a737d; }
+      .body { font: 400 14px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .label { font: 600 12px 'JetBrains Mono', 'Fira Code', monospace; fill: #0077b6; letter-spacing: .08em; }
+      .line { stroke: #0077b6; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .box-fill { fill: #f4f6f8; stroke: #e1e4e8; stroke-width: 1.5; }
+      .box-engine { fill: #ffffff; stroke: #0077b6; stroke-width: 1.5; }
+      .inner-box { fill: #ffffff; stroke: #e1e4e8; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#ffffff"/>
+
+  <text x="60" y="60" class="h1">Enrichment flow</text>
+  <text x="60" y="88" class="sub">Identity logs reach the engine through Logstash. Caching, validation and provider calls live in one place.</text>
+
+  <rect x="60" y="180" width="220" height="140" rx="8" class="box-fill"/>
+  <text x="80" y="215" class="label">INPUT</text>
+  <text x="80" y="248" class="box-title">Identity logs</text>
+  <text x="80" y="278" class="mono-muted">source.ip</text>
+  <text x="80" y="298" class="mono-muted">user.name</text>
+
+  <rect x="380" y="155" width="440" height="225" rx="10" class="box-engine"/>
+  <text x="400" y="190" class="label">INTERNAL SERVICE</text>
+  <text x="400" y="218" class="box-title">Enrichment Engine</text>
+
+  <rect x="400" y="240" width="120" height="50" rx="6" class="inner-box"/>
+  <text x="460" y="271" class="mono" text-anchor="middle">nginx</text>
+
+  <rect x="540" y="240" width="120" height="50" rx="6" class="inner-box"/>
+  <text x="600" y="271" class="mono" text-anchor="middle">fastapi</text>
+
+  <rect x="680" y="240" width="120" height="50" rx="6" class="inner-box"/>
+  <text x="740" y="271" class="mono" text-anchor="middle">postgres</text>
+
+  <text x="400" y="320" class="body">short cache · validate, orchestrate, retry · long cache</text>
+  <text x="400" y="345" class="mono-muted">GET /enrich/{ip}?providers=spur</text>
+
+  <rect x="920" y="180" width="220" height="140" rx="8" class="box-fill"/>
+  <text x="940" y="215" class="label">PROVIDER</text>
+  <text x="940" y="248" class="box-title">Spur API</text>
+  <text x="940" y="278" class="mono-muted">tunnels.operator</text>
+  <text x="940" y="298" class="mono-muted">risks · client</text>
+
+  <rect x="490" y="430" width="220" height="100" rx="8" class="box-fill"/>
+  <text x="510" y="462" class="label">OUTPUT</text>
+  <text x="510" y="490" class="box-title">Elastic document</text>
+  <text x="510" y="514" class="mono-muted">enrichment.spur.*</text>
+
+  <path d="M280 250 L376 250" class="line"/>
+  <path d="M820 250 L916 250" class="line"/>
+  <path d="M600 380 L600 426" class="line"/>
+
+  <text x="295" y="240" class="mono-muted">logstash</text>
+  <text x="835" y="240" class="mono-muted">on miss</text>
+  <text x="610" y="412" class="mono-muted">attach response</text>
+</svg>

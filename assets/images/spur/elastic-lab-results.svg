@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Elastic lab enriched logon dataset</title>
+  <desc id="desc">Stat cards summarising the synthetic logs-logons-lab dataset: total events, unique IPs, success and failure counts, and the seeded attack patterns.</desc>
+  <defs>
+    <style>
+      .h1 { font: 600 26px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .sub { font: 400 15px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .stat-label { font: 500 14px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .stat-num { font: 700 42px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .card-title { font: 600 16px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .body { font: 400 14px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .body-muted { font: 400 13px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .mono { font: 500 13px 'JetBrains Mono', 'Fira Code', monospace; fill: #1c1e26; }
+      .mono-muted { font: 500 12px 'JetBrains Mono', 'Fira Code', monospace; fill: #6a737d; }
+      .label { font: 600 12px 'JetBrains Mono', 'Fira Code', monospace; fill: #0077b6; letter-spacing: .08em; }
+      .box-fill { fill: #f4f6f8; stroke: #e1e4e8; stroke-width: 1.5; }
+      .accent-rule { stroke: #0077b6; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1200" height="600" fill="#ffffff"/>
+
+  <text x="60" y="60" class="h1">Elastic lab: enriched logons</text>
+  <text x="60" y="88" class="sub">Synthetic dataset in <tspan class="mono" font-size="14">logs-logons-lab</tspan>. All public source IPs enriched through the local engine.</text>
+
+  <rect x="60" y="140" width="260" height="130" rx="10" class="box-fill"/>
+  <line x1="60" y1="140" x2="60" y2="270" class="accent-rule"/>
+  <text x="84" y="180" class="stat-label">Documents</text>
+  <text x="84" y="230" class="stat-num">10 000</text>
+
+  <rect x="345" y="140" width="260" height="130" rx="10" class="box-fill"/>
+  <line x1="345" y1="140" x2="345" y2="270" class="accent-rule"/>
+  <text x="369" y="180" class="stat-label">Unique source IPs</text>
+  <text x="369" y="230" class="stat-num">42</text>
+
+  <rect x="630" y="140" width="260" height="130" rx="10" class="box-fill"/>
+  <line x1="630" y1="140" x2="630" y2="270" class="accent-rule"/>
+  <text x="654" y="180" class="stat-label">Successful logons</text>
+  <text x="654" y="230" class="stat-num">8 032</text>
+
+  <rect x="915" y="140" width="225" height="130" rx="10" class="box-fill"/>
+  <line x1="915" y1="140" x2="915" y2="270" class="accent-rule"/>
+  <text x="939" y="180" class="stat-label">Failed logons</text>
+  <text x="939" y="230" class="stat-num">1 968</text>
+
+  <rect x="60" y="310" width="355" height="200" rx="10" class="box-fill"/>
+  <text x="84" y="345" class="label">SPUR CONTEXT</text>
+  <text x="84" y="377" class="card-title">VPN / proxy traffic</text>
+  <text x="84" y="412" class="body">3 182 documents matched</text>
+  <text x="84" y="437" class="mono">enrichment.spur.tunnels.type</text>
+  <text x="84" y="460" class="mono-muted">VPN or PROXY</text>
+  <text x="84" y="493" class="body-muted">Across 11 unique operators.</text>
+
+  <rect x="440" y="310" width="355" height="200" rx="10" class="box-fill"/>
+  <text x="464" y="345" class="label">PATTERN 1</text>
+  <text x="464" y="377" class="card-title">Brute force, two targets</text>
+  <text x="464" y="412" class="body">Hundreds of failures each.</text>
+  <text x="464" y="437" class="body">Source IPs flagged as Tor</text>
+  <text x="464" y="460" class="body">and commercial VPN.</text>
+  <text x="464" y="493" class="body-muted">Surfaces with operator context, not just IP.</text>
+
+  <rect x="820" y="310" width="320" height="200" rx="10" class="box-fill"/>
+  <text x="844" y="345" class="label">PATTERN 2</text>
+  <text x="844" y="377" class="card-title">Password spray</text>
+  <text x="844" y="412" class="body">51 users targeted</text>
+  <text x="844" y="437" class="body">655 failures, 17 successes</text>
+  <text x="844" y="460" class="body">small set of VPN exit nodes</text>
+  <text x="844" y="493" class="body-muted">Auth pattern + infra context together.</text>
+
+  <text x="60" y="565" class="body-muted">Synthetic data — fields and shapes mirror what production identity logs would carry: source.ip, user.name, result, enrichment.spur.*</text>
+</svg>

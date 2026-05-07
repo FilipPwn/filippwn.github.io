@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">Cache TTL versus monthly API call volume</title>
+  <desc id="desc">Three TTL choices and their relative effect on the number of upstream calls per month for the same set of unique source IPs.</desc>
+  <defs>
+    <style>
+      .h1 { font: 600 26px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .h2 { font: 600 32px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1c1e26; }
+      .sub { font: 400 15px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .body { font: 400 14px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6a737d; }
+      .mono { font: 500 13px 'JetBrains Mono', 'Fira Code', monospace; fill: #1c1e26; }
+      .mono-muted { font: 500 13px 'JetBrains Mono', 'Fira Code', monospace; fill: #6a737d; }
+      .label { font: 600 12px 'JetBrains Mono', 'Fira Code', monospace; fill: #0077b6; letter-spacing: .08em; }
+      .label-muted { font: 600 11px 'JetBrains Mono', 'Fira Code', monospace; fill: #6a737d; letter-spacing: .08em; }
+      .box-fill { fill: #f4f6f8; stroke: #e1e4e8; stroke-width: 1.5; }
+      .bar-bg { fill: #e1e4e8; }
+      .bar-fg { fill: #0077b6; }
+    </style>
+  </defs>
+  <rect width="1200" height="540" fill="#ffffff"/>
+
+  <text x="60" y="60" class="h1">Cache TTL is your budget control</text>
+  <text x="60" y="88" class="sub">For the same set of unique source IPs, longer TTLs convert directly into fewer upstream calls per month.</text>
+
+  <rect x="60" y="150" width="340" height="320" rx="10" class="box-fill"/>
+  <text x="84" y="185" class="label">SHORT TTL</text>
+  <text x="84" y="232" class="h2">24 hours</text>
+  <text x="84" y="268" class="body">Fresh enrichment every day.</text>
+  <text x="84" y="290" class="body">Highest call volume.</text>
+  <line x1="84" y1="320" x2="376" y2="320" stroke="#e1e4e8"/>
+  <text x="84" y="350" class="mono-muted">≈ Σ daily unique IPs</text>
+  <text x="84" y="372" class="mono-muted">over the month</text>
+  <text x="84" y="420" class="label-muted">RELATIVE CALLS</text>
+  <rect x="84" y="432" width="292" height="10" rx="5" class="bar-bg"/>
+  <rect x="84" y="432" width="280" height="10" rx="5" class="bar-fg"/>
+
+  <rect x="430" y="150" width="340" height="320" rx="10" class="box-fill"/>
+  <text x="454" y="185" class="label">MEDIUM TTL</text>
+  <text x="454" y="232" class="h2">7 days</text>
+  <text x="454" y="268" class="body">Each IP refreshed weekly.</text>
+  <text x="454" y="290" class="body">Most common starting point.</text>
+  <line x1="454" y1="320" x2="746" y2="320" stroke="#e1e4e8"/>
+  <text x="454" y="350" class="mono-muted">≈ Σ weekly unique IPs</text>
+  <text x="454" y="372" class="mono-muted">× 4 weeks</text>
+  <text x="454" y="420" class="label-muted">RELATIVE CALLS</text>
+  <rect x="454" y="432" width="292" height="10" rx="5" class="bar-bg"/>
+  <rect x="454" y="432" width="120" height="10" rx="5" class="bar-fg"/>
+
+  <rect x="800" y="150" width="340" height="320" rx="10" class="box-fill"/>
+  <text x="824" y="185" class="label">LONG TTL</text>
+  <text x="824" y="232" class="h2">30 days</text>
+  <text x="824" y="268" class="body">Each IP refreshed monthly.</text>
+  <text x="824" y="290" class="body">Lowest call volume.</text>
+  <line x1="824" y1="320" x2="1116" y2="320" stroke="#e1e4e8"/>
+  <text x="824" y="350" class="mono-muted">≈ monthly unique IPs</text>
+  <text x="824" y="372" class="mono-muted">over the month</text>
+  <text x="824" y="420" class="label-muted">RELATIVE CALLS</text>
+  <rect x="824" y="432" width="292" height="10" rx="5" class="bar-bg"/>
+  <rect x="824" y="432" width="55" height="10" rx="5" class="bar-fg"/>
+
+  <text x="60" y="510" class="body">Aim to keep projected calls under 70-80% of the monthly limit. Reserve the rest for incident bursts and backfills.</text>
+</svg>

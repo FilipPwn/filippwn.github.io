@@ -147,4 +147,4 @@ This lets you avoid the "everything is suspicious" trap — a plain `TUNNEL` fla
 
 ## What's next
 
-In **Part 2**, I'll walk through how to integrate Spur's data feed into **Elastic SIEM** — downloading the feed, parsing it, setting up an ingest pipeline, and building the enrichment processor so these fields are automatically added to your logs at query time.
+In **[Part 2](/blog/2026/04/enrich-your-data-with-spur-part-2-practical-approach/)**, I'll walk through how to integrate Spur's data feed into **Elastic SIEM** — downloading the feed, parsing it, setting up an ingest pipeline, and building the enrichment processor so these fields are automatically added to your logs at query time.
